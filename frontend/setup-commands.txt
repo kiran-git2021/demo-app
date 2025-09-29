@@ -1,0 +1,112 @@
+npm create vite@latest my-app
+cd my-app
+npm install
+
+npm install -D tailwindcss@3.4.10 postcss autoprefixer
+npx tailwindcss init -p
+
+or
+
+rmdir node_modules
+hit a --> A
+del package-lock.json
+npm cache clean --force
+npm install
+npm install -D tailwindcss@3.4.10 postcss autoprefixer
+npx tailwindcss init -p
+dir .\node_modules\.bin\
+
+Paste --->  src/index.css
+------------------------------------------>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+------------------------------------------<<
+
+Paste  ---> src/main.jsx
+------------------------------------------>
+import './index.css';
+------------------------------------------<<
+comment all line ins  ---> src/App.css
+
+
+
+paste --> tailwind.config.js
+------------------------------------------>
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+------------------------------------------<<
+
+create new file jsconfig.json
+----------------------------------------->
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+
+-----------------------------------------<<
+
+paste ---> App.jsx
+------------------------------------------>
+import { Button } from "./components/ui/button";
+
+function App() {
+  return (
+    <div className="p-4">
+      <Button>Click Me</Button>
+    </div>
+  );
+}
+
+export default App;
+------------------------------------------<<
+
+paste ---> vite.config.js
+-----------------------------------------
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+})
+-----------------------------------------
+
+npm install @radix-ui/react-primitive @radix-ui/react-slot clsx tailwind-variants
+npm install -D shadcn
+npx shadcn@latest init
+npx shadcn@latest add button
+npx shadcn@latest add sidebar
+
+npm run dev
+
+#install Components from https://ui.shadcn.com/docs/components/
+-------------------------------
+npx shadcn@latest add sidebar
+#npx shadcn@latest add select
+npx shadcn@latest add navigation-menu
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add avatar
+npx shadcn@latest add collapsible
+
+
+

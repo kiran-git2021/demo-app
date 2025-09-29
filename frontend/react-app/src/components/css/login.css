@@ -1,0 +1,77 @@
+/* footer.css */
+
+/* CONFIG: tweak these to change look */
+:root{
+  /*--footer-bg: #0f1724; */       /* dark background */
+  /*--footer-text: #e6eef8;*/      /* main text color (high contrast) */
+  --footer-accent: #6ad1ff;    /* accent / link color */
+  --footer-muted: #9fb3c8;     /* muted text for separators */
+  --footer-font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --footer-font-size: 10px;
+  --footer-align: center;      /* change to left / right if needed */
+  --footer-padding: 18px 20px;
+}
+
+/* Base footer styling */
+#page-footer {
+  box-sizing: border-box;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: var(--footer-font-family);
+  font-size: var(--footer-font-size);
+  text-align: var(--footer-align);
+  padding: var(--footer-padding);
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make text slightly smaller on very small screens */
+@media (max-width: 420px){
+  #page-footer {
+    font-size: 13px;
+    padding: 14px 12px;
+  }
+}
+
+/* Links inside footer */
+#page-footer a {
+  color: var(--footer-accent);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 6px;
+}
+
+/* Hover / focus for links (accessibility-friendly) */
+#page-footer a:hover,
+#page-footer a:focus {
+  text-decoration: underline;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106,209,255,0.12);
+  border-radius: 3px;
+}
+
+/* Separator style (pipe) — keep spacing consistent */
+#page-footer .sep {
+  color: var(--footer-muted);
+  margin: 0 8px;
+  user-select: none;
+}
+
+/* Optional: if you want left/right layout on wide screens */
+@media (min-width: 900px){
+  /* example: copyright left, links right */
+  #page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #page-footer .left,
+  #page-footer .right {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+}

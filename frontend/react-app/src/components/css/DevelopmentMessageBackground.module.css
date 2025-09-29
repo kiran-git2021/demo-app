@@ -1,0 +1,58 @@
+.root {
+  min-height: 50vh; /* full viewport height */
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+  padding: 0 20px; /* optional horizontal padding */
+  position: relative;
+  text-align: center;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  color: var(--mantine-color-gray-0);
+  z-index: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .image {
+    color: var(--mantine-color-dark-6);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* spacing between elements */
+}
+
+.title {
+  font-family: Outfit, var(--mantine-font-family);
+  font-weight: 500;
+  font-size: 38px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+.description {
+  max-width: 540px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--mantine-color-gray-6);
+}

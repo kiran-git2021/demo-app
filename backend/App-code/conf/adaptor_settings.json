@@ -1,0 +1,13 @@
+{
+    "adaptor_settings": {
+        "mqtt_enabled": false,
+        "mqtt_broker": "broker.hivemq.com",
+        "mqtt_port": "1883",
+        "mqtt_topic": "/origin/iot/devices",
+        "mqtt_username": "",
+        "mqtt_password": "",
+        "web_enabled": false,
+        "web_protocol": "http",
+        "web_endpoint": ""
+    }
+}
