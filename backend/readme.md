@@ -1,13 +1,14 @@
-
+```bash
 8000 ---> Front End
+
 8001 ---> BE-Auth APIs
           router1---> auth
           router2---> live_screen
           router3---> engine
+```
+```bash
 
 Version : 7.0.6
-
-
 
 Version : 7.0.4
 --> all logo and names are removed
@@ -53,7 +54,7 @@ Version : 7.0.1
     Inventory table     : connected_items
     License table       : platform_license_key
 
-
+```
 
 
 
